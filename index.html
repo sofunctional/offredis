@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" data-theme="blocks">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sofia offredi</title>
+  <meta name="description" content="Sofia Offredi: linguist based in Stockholm, interested in AI, qualitative coding and data analysis.">
+  <meta name="theme-color" content="#562F54">
+  <!-- how the site looks when the link is shared -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="sofia offredi">
+  <meta property="og:description" content="Linguist based in Stockholm, interested in AI, qualitative coding and data analysis.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23562F54'/%3E%3Crect x='8' y='8' width='16' height='16' fill='%23F650BD'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sono:MONO,wght@0..1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/base.css">
+  <link rel="stylesheet" href="shared/hand.css">
+  <link rel="stylesheet" href="shared/paint.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- dry brush: ragged edges, then streaks cut out of the paint -->
+      <filter id="brush" x="-4%" y="-8%" width="108%" height="116%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency=".028" numOctaves="2" seed="7" result="edge"/>
+        <feDisplacementMap in="SourceGraphic" in2="edge" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+        <feTurbulence type="fractalNoise" baseFrequency=".3 .012" numOctaves="2" seed="3"/>
+        <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -11 8.6" result="streaks"/>
+        <feComposite in="rough" in2="streaks" operator="in"/>
+      </filter>
+      <filter id="rough" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="11"/>
+        <feDisplacementMap in="SourceGraphic" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+  <header class="top">
+    <a class="mark" href="https://www.linkedin.com/in/sofia-offredi-1a0ba42b2" target="_blank" rel="noopener" aria-label="Sofia Offredi on LinkedIn (opens in a new tab)"><b aria-hidden="true"></b>sofia offredi</a>
+    <nav class="menu" aria-label="Sections">
+      <a href="#experience">experience</a>
+      <a href="#academic">academic stuff</a>
+      <a href="#about">about me</a>
+      <a href="#projects" hidden>personal projects</a><!-- personal projects: remove "hidden" here and on the section to publish it -->
+      <a href="#contact">contact</a>
+      <a class="cv" data-arrow="drop" href="assets/sofia-offredi-cv.pdf" target="_blank" rel="noopener">cv (pdf) <span class="arrow" aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <canvas class="wave" aria-hidden="true"></canvas>
+      <h1 class="name" aria-label="sofia"><span aria-hidden="true">s</span><span aria-hidden="true">o</span><span aria-hidden="true">f</span><span aria-hidden="true">i</span><span aria-hidden="true">a</span></h1>
+      <div class="intro">
+        <p class="statement">
+          <span class="ciao">ciao <svg class="hand" viewBox="0 0 100 100" aria-hidden="true"><g filter="url(#rough)"><g class="palm"><g class="swish"><path d="M10 36C9 28 11 22 16 17"/><path d="M88 36C89 28 87 22 82 17"/></g><path d="M25.9 50.0C24.6 40.0 24.6 30.0 24.6 22.0 24.6 16.0 35.0 16.0 35.0 22.0 35.0 30.0 36.3 40.0 37.6 48.0"/><path d="M37.6 48.0C37.6 38.0 38.9 26.0 38.9 16.0 38.9 10.0 49.3 10.0 49.3 16.0 49.3 26.0 49.3 38.0 50.6 47.0"/><path d="M50.6 47.0C51.9 38.0 51.9 28.0 53.2 20.0 53.2 14.0 63.6 14.0 63.6 20.0 63.6 28.0 63.6 38.0 62.3 48.0"/><path d="M62.3 48.0C64.9 41.0 66.2 35.0 68.8 29.0 71.4 24.0 79.2 26.0 76.6 31.0 74.0 38.0 72.7 46.0 72.7 54.0"/><path d="M72.7 54.0C74.0 64.0 71.4 74.0 64.9 82.0 61.0 86.0 59.7 89.0 59.7 92.0"/><path d="M25.9 50.0C25.9 56.0 24.6 60.0 22.0 63.0"/><path d="M22.0 63.0C16.8 58.0 11.6 53.0 6.4 51.0 1.2 49.0 -2.7 54.0 1.2 58.0 7.7 64.0 14.2 72.0 19.4 80.0 23.3 85.0 25.9 89.0 25.9 92.0"/></g></g></svg></span> i'm a
+          <span class="circled">linguist<svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M58 16C120 2 236 3 282 30c26 16 12 44-40 56-66 15-176 14-222-12C-14 54 12 24 72 12c44-9 92-9 128-3"/></svg></span>
+          based in stockholm, interested in ai, qualitative coding and data analysis.
+        </p>
+        <p class="ipa">
+          <span class="sr">If you can read this, you are a linguist too (written in the International Phonetic Alphabet).</span>
+          <span aria-hidden="true">/ɪf ju kən ˈɹid ðɪs ju ɑɹ ə ˈlɪŋɡwɪst tu/</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="title" aria-label="experience"><svg class="paint" viewBox="0 16 596 112" aria-hidden="true"><mask id="swipe-experience"><path class="swipe" pathLength="1" style="--i:0" d="M-20 70H616"/></mask><g mask="url(#swipe-experience)"><g filter="url(#brush)"><text x="-4" y="98" dy="-1.6 1.0 -2.0 5.1 -0.9 -1.4 -2.2 0.3 3.7 -0.2" rotate="-1.9 -1.7 -0.5 1.4 -1.3 -1.1 -1.9 2.1 1.5 -1.5">experience</text></g></g></svg><svg class="doodle case" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><g class="papers ease"><path d="M26 60C27 54 27 50 28 46 48 45 70 45 92 46 93 51 93 55 94 60"/><path d="M36 52C52 51 66 51 82 52"/></g><path d="M12 60C11 70 11 80 13 90 14 93 17 94 21 94 48 95 76 95 101 94 105 94 108 92 109 89 111 80 111 70 110 60"/><path d="M12 60C44 61 78 61 110 60"/><path d="M30 61C30 64 30 66 31 68 34 68 37 68 40 68 40 66 40 64 40 61"/><path d="M82 61C82 64 82 66 83 68 86 68 89 68 92 68 92 66 92 64 92 61"/><g class="lid ease"><path d="M12 58C10 50 10 42 12 37 13 34 16 32 20 32 48 31 76 31 102 32 106 32 109 34 110 37 111 44 111 51 110 58"/><path d="M12 58C44 59 78 59 110 58"/><path d="M46 32C46 25 48 21 52 20 58 19 64 19 70 20 74 21 76 25 76 32"/><path d="M52 32C52 28 53 26 56 26 59 25 63 25 66 26 69 26 70 28 70 32"/></g></g></svg></h2>
+
+      <ol class="rows">
+        <li>
+          <span class="meta">aug 2026 – now</span>
+          <h3>Course Assistant</h3>
+          <span class="meta">Stockholm School of Entrepreneurship (SSES), Stockholm</span>
+          <p>Streamlined communication between students and faculty actors through Canvas (LMS). Coordinated planning, delivery, and follow-up of one course per academic period alongside the course director.</p>
+        </li>
+        <li>
+          <span class="meta">sep 2025 – now</span>
+          <h3>Italian Language Teacher</h3>
+          <span class="meta">Folkuniversitetet Stockholm, Stockholm</span>
+          <p>Created and organised language course content to lead adult students to higher proficiency by adapting lessons to their level.</p>
+        </li>
+        <li>
+          <span class="meta">oct 2024 – may 2026</span>
+          <h3>Italian Mother-Tongue Teacher</h3>
+          <span class="meta">TuttoTondo Italienska Skolan, Stockholm</span>
+          <p>Monitored student progress and engagement, pinpointed recurring learning obstacles, and modified lessons to enhance participation and outcomes.</p>
+        </li>
+        <li>
+          <span class="meta">mar – aug 2024</span>
+          <h3>Recruitment Consultant Intern (HR)</h3>
+          <span class="meta">Adecco, Milano</span>
+          <p>Sourced and screened candidates, reviewed CVs, and conducted initial candidate interviews to assess skills and suitability to clients' needs.</p>
+        </li>
+      </ol>
+
+    </section>
+
+    <section id="academic">
+      <h2 class="title" aria-label="academic stuff"><svg class="paint" viewBox="0 16 480 112" aria-hidden="true"><mask id="swipe-academic"><path class="swipe" pathLength="1" style="--i:0" d="M-20 70H500"/></mask><g mask="url(#swipe-academic)"><g filter="url(#brush)"><text x="-4" y="98" dy="-0.2 -2.0 -0.8 5.4 -2.1 -3.1 4.0 0.2 -1.0 2.6 -3.4 1.9 -0.4 2.2" rotate="-0.6 1.8 0.0 -2.0 0.6 -0.6 -0.2 -1.6 0.9 -1.3 1.6 -0.8 2.0 -1.1">academic stuff</text></g></g></svg><svg class="doodle book" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><path d="M7 22C6 42 6 62 6 85 24 81 44 83 60 93"/><path d="M113 22C114 42 114 62 114 85 96 81 76 83 60 93"/><path d="M11 83C30 79 48 83 60 91"/><path d="M109 83C90 79 72 83 60 91"/><path d="M60 28C48 18 30 14 10 20 9 42 9 62 10 80 30 76 48 80 60 90"/><path d="M60 28C72 18 90 14 110 20 111 42 111 62 110 80 90 76 72 80 60 90"/><path d="M60 28C60 50 60 70 60 90"/><path d="M18 32C28.0 30 40.0 30.5 50 34"/><path d="M18 40C28.0 38 40.0 38.5 50 42"/><path d="M18 48C19.2 46 31.2 46.5 32 50"/><path d="M18 58C28.0 56 40.0 56.5 50 60"/><path d="M18 66C28.0 64 40.0 64.5 50 68"/><path d="M18 73C19.2 71 31.2 71.5 32 75"/><path d="M70 32C80.0 30 92.0 30.5 102 30"/><path d="M70 40C80.0 38 92.0 38.5 102 38"/><path d="M70 47C71.2 45 83.2 45.5 84 45"/><path d="M70 57C80.0 55 92.0 55.5 102 55"/><path d="M70 65C80.0 63 92.0 63.5 102 63"/><path d="M70 72C80.0 70 92.0 70.5 102 70"/><g class="page"><path d="M60 28C72 18 90 14 110 20 111 42 111 62 110 80 90 76 72 80 60 90Z" class="sheet"/><path d="M70 34C80.0 32 92.0 32.5 102 32"/><path d="M70 42C80.0 40 92.0 40.5 102 40"/><path d="M70 50C80.0 48 92.0 48.5 102 48"/><path d="M70 58C71.2 56 83.2 56.5 84 56"/><path d="M70 68C80.0 66 92.0 66.5 102 66"/></g></g></svg></h2>
+
+      <ol class="rows">
+        <li>
+          <span class="meta">sep 2024 – jun 2026</span>
+          <h3>MA in Language Science, Specialisation in Applied English Linguistics</h3>
+          <span class="meta">Stockholm University, Stockholm, Sweden</span>
+          <div class="more">
+            <p>thesis: <a class="ext" href="https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A2097307&amp;dswid=-7342" target="_blank" rel="noopener">Peer Interaction in Italian EMI: Word Search Sequences in Italian English-Medium Instruction&nbsp;↗</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="meta">jul – aug 2025</span>
+          <h3>Mandarin Chinese Language Course (HSK4)</h3>
+          <span class="meta">Shanghai International Studies University (SISU), Shanghai, China</span>
+          <div class="more"></div>
+        </li>
+        <li>
+          <span class="meta">sep 2021 – apr 2024</span>
+          <h3>BA in Foreign Languages and Literatures</h3>
+          <span class="meta">Università degli Studi di Milano, Milan, Italy</span>
+          <div class="more">
+            <p>thesis: Perception and Linguistic Variation: A Study of Norwegian Dialects of Tromsø</p>
+          </div>
+        </li>
+        <li>
+          <span class="meta">2022</span>
+          <h3>Erasmus+ Exchange</h3>
+          <span class="meta">UiT The Arctic University of Norway, Tromsø, Norway</span>
+          <div class="more"></div>
+        </li>
+      </ol>
+
+      <div class="bridge">
+        <h3 class="label">thesis research</h3>
+        <div class="research">
+          <p class="lead-in"><a class="ext" href="https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A2097307&amp;dswid=-7342" target="_blank" rel="noopener">Peer Interaction in Italian EMI: Word Search Sequences in Italian English-Medium Instruction&nbsp;↗</a></p>
+          <p class="meta">MA thesis, Stockholm University.</p>
+          <ul class="points">
+            <li>Conducted a data-driven investigation of how Italian university students manage word searches in pair and group work in English-Medium Instruction (EMI) settings, using Conversation Analysis (CA) as the primary methodological framework.</li>
+            <li>Built a corpus of audio recordings of naturally occurring peer-group talk, transcribed it according to CA conventions, and analysed it turn-by-turn to identify recurring interactional practices.</li>
+            <li>Argued that word search difficulty in this setting is frequently disciplinary, tied to subject-specific terminology and content rather than purely linguistic in origin.</li>
+            <li>Identified code-switching into Italian as a face-saving interactional resource that students deploy during word searches.</li>
+            <li>Engaged closely with foundational CA literature on repair and word searches (Schegloff et al., 1977; Kurhila, 2006), core EMI research (Costa &amp; Coleman, 2013; Rose et al., 2026), and recent work on word search sequences specifically (Siegel, 2026).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bridge">
+        <h3 class="label">research interests</h3>
+        <p class="interests">Peer interaction in higher education; word search sequences, their initiation and resolution; English-Medium Instruction (EMI); second language acquisition; Italian university instruction and language policies in Italian education. I am also interested in multilingualism, English as a lingua franca (ELF) and European language policies.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="title" aria-label="about me"><svg class="paint" viewBox="0 16 464 112" aria-hidden="true"><mask id="swipe-about"><path class="swipe" pathLength="1" style="--i:0" d="M-20 70H484"/></mask><g mask="url(#swipe-about)"><g filter="url(#brush)"><text x="-4" y="98" dy="-2.0 2.8 -2.5 3.5 -1.8 -3.0 3.5 1.3" rotate="0.9 -0.1 1.4 0.1 -1.3 -0.6 -2.1 -1.3">about me</text></g></g></svg><svg class="doodle moka" viewBox="0 0 160 100" aria-hidden="true"><g filter="url(#rough)"><path d="M8 97C24 98 46 98 64 97"/><path d="M96 66C96 80 100 92 110 94 116 95 124 95 130 94 140 92 144 80 144 66"/><path d="M96 66C112 68 128 68 144 66"/><path d="M143 72C152 72 155 80 149 84 147 86 144 86 141 85"/><path d="M86 97C106 99 134 99 154 97"/><g class="steam"><path d="M112 60C108 56 116 52 112 47"/><path d="M126 60C122 56 130 52 126 47"/></g><path d="M112.6 33C115.6 34.6 117 38.6 117.2 45 117.4 53 117.2 62 117 70" class="stream" pathLength="1"/><g class="pot"><path d="M18 30C22 25 30 22 39 22 48 22 56 25 60 30"/><path d="M35 22C35 17 43 17 43 22"/><path d="M18 30C32 29 46 29 60 30"/><path d="M27 60C25 50 22 40 20 31"/><path d="M51 60C53 50 56 40 58 31"/><path d="M33 60C32 50 30 40 29 31"/><path d="M45 60C46 50 48 40 49 31"/><path d="M57 30C62 29.6 67 28.2 73 25.4"/><path d="M55.5 38C59 36 62.5 33.4 65.5 30.6 68 28.6 70.5 26.8 73 25.4"/><path d="M60 31.6C63.5 31 66.5 30 69.5 28.4"/><path d="M25 61C34 60 44 60 53 61"/><path d="M24 64C34 65 44 65 54 64"/><path d="M25 64C24 74 23 85 22 96"/><path d="M53 64C54 74 55 85 56 96"/><path d="M22 96C32 97 46 97 56 96"/><path d="M31 65C31 75 30 85 30 96"/><path d="M47 65C47 75 48 85 48 96"/><path d="M54 74C56 74 58 75 58 77"/><path d="M21 33C15 33 10 33 8 35 6 37 6 40 6 43 7 47 8 51 10 54 12 56 16 55 24 51"/></g></g></svg></h2>
+
+      <div class="about">
+        <div class="talk">
+          <div class="transcript" role="img" aria-label="A short introduction written as a conversation analysis transcript: Ciao, I'm Sofia. I study how people actually talk: the pauses, the overlaps, the ums. Now I want to bring that to AI, qualitative coding and data analysis, and bring some creativity with me too.">
+            <p><b>01</b><b>SOF:</b><span>↑ciao (.) i'm sofia</span></p>
+            <p><b>02</b><b></b><span>.hh i study how people</span></p>
+            <p><b>03</b><b></b><span>↑<u>ac</u>tually talk=</span></p>
+            <p><b>04</b><b></b><span>=the pauses, the</span></p>
+            <p><b>05</b><b></b><span>[overlaps,</span></p>
+            <p><b>06</b><b>VIS:</b><span>[mhm</span></p>
+            <p><b>07</b><b>SOF:</b><span>the u::ms,</span></p>
+            <p><b>08</b><b></b><span>(0.8)</span></p>
+            <p><b>09</b><b></b><span>&gt;now i want to bring that&lt;</span></p>
+            <p><b>10</b><b></b><span>to ai, qualitative co- (.)</span></p>
+            <p><b>11</b><b></b><span>coding and data ↓analysis.</span></p>
+            <p><b>12</b><b></b><span>°and bring some creativity°</span></p>
+            <p><b>13</b><b></b><span>°with me too°</span></p>
+          </div>
+        </div>
+
+        <div class="aboutside">
+          <p>Specialised in linguistics and conversation analysis, skilled in qualitative research and transcription, with experience in teaching at all levels of proficiency. Interested in AI implementation, qualitative coding and data analysis.</p>
+
+          <h3 class="label">languages i can (kinda) speak</h3>
+          <ul class="langs">
+            <li><span>italian</span><span class="meta">native</span></li>
+            <li><span>english</span><span class="meta">fluent</span></li>
+            <li><span>spanish</span><span class="meta">intermediate–high</span></li>
+            <li><span>swedish</span><span class="meta">intermediate</span></li>
+            <li><span>mandarin</span><span class="meta">beginner, hsk4</span></li>
+          </ul>
+
+          <h3 class="label">ok, but what can i do?</h3>
+          <dl class="goes">
+            <div><dt>ai</dt><dd>i use ai as a tool to improve my workflow.</dd></div>
+            <div><dt>planning</dt><dd>juggling different jobs has made me a big-time planner: tell me something and it will get its own space in my agenda.</dd></div>
+            <div><dt>transcription</dt><dd>i transcribe and do speech analysis with software like Praat (iykyk).</dd></div>
+            <div><dt>teaching</dt><dd>i am a teacher, so i am very patient, used to talking to big and small crowds, and not afraid to interact with all kinds of people.</dd></div>
+          </dl>
+
+          <h3 class="label">people say i am...</h3>
+          <ul class="tags">
+            <li>reliable</li>
+            <li>adaptable</li>
+            <li>problem solver</li>
+            <li>very funny</li>
+            <li>tech enthusiast</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- personal projects is ready but switched off until it is complete: remove "hidden" here and on the menu link -->
+    <section id="projects" hidden>
+      <!-- the projects sit around the title like objects on a table; each one is a project -->
+      <div class="stage">
+      <h2 class="title" aria-label="personal projects"><svg class="paint" viewBox="0 16 480 212" aria-hidden="true"><mask id="swipe-projects"><path class="swipe" pathLength="1" style="--i:0" d="M-20 122H500"/></mask><g mask="url(#swipe-projects)"><g filter="url(#brush)"><text x="240" y="98" text-anchor="middle" dy="0.1 2.7 -1.2 -0.6 -3.8 4.3 -1.5 2.1" rotate="1.5 -1.0 1.0 -1.9 -0.6 -1.2 -0.9 2.1">personal</text><text x="240" y="198" text-anchor="middle" dy="-2.0 4.9 -1.1 1.5 -2.5 0.6 -3.3 2.3" rotate="1.5 -1.7 0.3 -1.4 1.8 -0.9 2.1 2.4">projects</text></g></g></svg><svg class="doodle bulb" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><path class="glass" d="M60 12C40 12 28 28 30 46 32 58 40 64 44 72 46 76 46 80 46 84 56 85 64 85 74 84 74 80 74 76 76 72 80 64 88 58 90 46 92 28 80 12 60 12Z"/><path d="M48 91C56 92 64 92 72 91"/><path d="M52 97C57 98 63 98 68 97"/><path d="M51 62C54 54 57 68 60 58 63 48 66 64 69 56"/><path d="M60 84C60 76 60 70 60 64"/><g class="rays ease"><path d="M14 22C18 25 21 28 24 31"/><path d="M106 22C102 25 99 28 96 31"/><path d="M6 50C10 50 14 50 18 50"/><path d="M114 50C110 50 106 50 102 50"/><path d="M30 4C32 7 34 9 36 11"/><path d="M90 4C88 7 86 9 84 11"/><path d="M60 0C60 1 60 2 60 4"/></g></g></svg></h2>
+        <ul class="pieces">
+          <li class="piece k1"><div class="it"><span class="tile"><img src="assets/photos/photo-01-web.jpg" alt="A lake in summer: reeds in the foreground, a wooded shore with houses and sailboats across the water, under a clear sky." width="806" height="1200" loading="lazy"></span><span class="cap"><b>01</b>photography</span></div></li>
+          <li class="piece k2"><div class="it"><span class="tile"></span><span class="cap"><b>02</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k3"><div class="it"><span class="tile"></span><span class="cap"><b>03</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k4"><div class="it"><span class="tile"></span><span class="cap"><b>04</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k5"><div class="it"><span class="tile"></span><span class="cap"><b>05</b><em class="ph">[project]</em></span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="title" aria-label="contact: say ciao"><svg class="paint" viewBox="0 16 480 112" aria-hidden="true"><mask id="swipe-contact"><path class="swipe" pathLength="1" style="--i:0" d="M-20 70H500"/></mask><g mask="url(#swipe-contact)"><g filter="url(#brush)"><text x="-4" y="98" dy="-2.9 2.3 -1.6 0.6 -0.5 3.1 -0.8 -0.7" rotate="-1.9 0.9 -1.9 1.2 1.2 -1.7 -0.3 2.4">say ciao</text></g></g></svg><svg class="hand" viewBox="0 0 100 100" aria-hidden="true"><g filter="url(#rough)"><g class="palm"><g class="swish"><path d="M10 36C9 28 11 22 16 17"/><path d="M88 36C89 28 87 22 82 17"/></g><path d="M25.9 50.0C24.6 40.0 24.6 30.0 24.6 22.0 24.6 16.0 35.0 16.0 35.0 22.0 35.0 30.0 36.3 40.0 37.6 48.0"/><path d="M37.6 48.0C37.6 38.0 38.9 26.0 38.9 16.0 38.9 10.0 49.3 10.0 49.3 16.0 49.3 26.0 49.3 38.0 50.6 47.0"/><path d="M50.6 47.0C51.9 38.0 51.9 28.0 53.2 20.0 53.2 14.0 63.6 14.0 63.6 20.0 63.6 28.0 63.6 38.0 62.3 48.0"/><path d="M62.3 48.0C64.9 41.0 66.2 35.0 68.8 29.0 71.4 24.0 79.2 26.0 76.6 31.0 74.0 38.0 72.7 46.0 72.7 54.0"/><path d="M72.7 54.0C74.0 64.0 71.4 74.0 64.9 82.0 61.0 86.0 59.7 89.0 59.7 92.0"/><path d="M25.9 50.0C25.9 56.0 24.6 60.0 22.0 63.0"/><path d="M22.0 63.0C16.8 58.0 11.6 53.0 6.4 51.0 1.2 49.0 -2.7 54.0 1.2 58.0 7.7 64.0 14.2 72.0 19.4 80.0 23.3 85.0 25.9 89.0 25.9 92.0"/></g></g></svg></h2>
+      <div class="links">
+        <a href="mailto:sofia.offredi@yahoo.it">sofia.offredi@yahoo.it</a>
+        <a href="https://www.linkedin.com/in/sofia-offredi-1a0ba42b2" rel="noopener">linkedin ↗</a>
+        <a href="assets/sofia-offredi-cv.pdf" target="_blank" rel="noopener">cv (pdf) ↓</a>
+        <span>stockholm, sweden</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="end">
+    <span>© 2026 sofia offredi</span>
+  </footer>
+
+  <script src="shared/scatter.js"></script>
+  <script src="script.js"></script>
+  <script src="shared/paint.js"></script>
+  <script src="shared/doodles.js"></script>
+  <script src="shared/arrows.js"></script>
+</body>
+</html>

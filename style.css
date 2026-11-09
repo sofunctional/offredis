@@ -1,0 +1,190 @@
+/* colours: each section is one block */
+[data-theme="blocks"] {
+  --bg: var(--c-plum); --ink: var(--c-mint); --muted: var(--c-mint);
+  --title: var(--c-pink); --name: var(--c-pink); --accent: var(--c-pink);
+  --rule: var(--c-grey); --wave: var(--c-grey);
+  --mark: var(--c-grey); --mark-ink: var(--c-mint);
+}
+#experience {
+  --bg: var(--c-mint); --ink: var(--c-forest); --muted: var(--c-grey);
+  --title: var(--c-plum); --accent: var(--c-pink);
+}
+#academic { --bg: var(--c-forest); }
+#projects {
+  --bg: var(--c-mint); --ink: var(--c-forest); --muted: var(--c-forest);
+  --title: var(--c-plum); --accent: var(--c-pink);
+  --rule: var(--c-forest); --mark: var(--c-forest); --mark-ink: var(--c-mint);
+}
+#contact, .end {
+  --bg: var(--c-pink); --ink: var(--c-forest); --muted: var(--c-forest);
+  --title: var(--c-forest); --rule: var(--c-forest); --accent: var(--c-plum);
+}
+
+/* the column rules frame the opening; below it, rules only separate real cells */
+.hero, section, .end { background-color: var(--bg); color: var(--ink); }
+.hero {
+  background-image: linear-gradient(to right, var(--rule) 1px, transparent 1px);
+  background-size: 25% 100%;
+}
+section[id] { padding: var(--section) 0; }
+
+/* hero */
+main { position: relative; z-index: 1; }
+.hero {
+  position: relative; min-height: 100svh;
+  padding: calc(var(--top) + var(--s3)) var(--g) var(--s5);
+  display: flex; flex-direction: column; justify-content: space-between; gap: var(--s5);
+}
+.wave {
+  position: absolute; inset: var(--top) 0 0; z-index: 0; overflow: hidden;
+  width: 100%; height: calc(100% - var(--top));
+  color: var(--wave);
+  user-select: none;
+}
+.hero .name { z-index: 1; }
+.hero .name.is-active { z-index: 60; }
+
+.statement {
+  position: relative; z-index: 1;
+  font-size: clamp(30px, 4.7vw, 84px); line-height: 1.06; font-weight: 500;
+  font-variation-settings: var(--semi); letter-spacing: -.02em;
+  text-indent: 25vw;
+}
+/* a line for linguists: smaller, same font, written in IPA */
+.ipa {
+  position: relative; z-index: 1; margin-top: var(--s4);
+  font-size: var(--t-xl); line-height: 1.3; font-weight: 500;
+  font-variation-settings: var(--semi);
+}
+.ciao { white-space: nowrap; }
+.circled { position: relative; display: inline-block; text-indent: 0; }
+.circled svg {
+  position: absolute; left: -5%; top: -6%; width: 110%; height: 116%;
+  overflow: visible; pointer-events: none;
+}
+.circled path {
+  fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: draw 1.3s .9s cubic-bezier(.6, 0, .2, 1) forwards;
+}
+.circled:hover path { animation: redraw 1s cubic-bezier(.6, 0, .2, 1) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes redraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+/* personal projects: the title sits in the middle and every project is laid around it.
+   Positions and sizes are in hundredths of the stage's width (cqw), so the arrangement
+   scales as one piece. --x/--y/--w place a tile, --a is its shape, --r its tilt, --d its depth. */
+.stage { position: relative; container-type: inline-size; aspect-ratio: 100 / 58; overflow-x: clip; }
+.stage .title { position: absolute; inset: 22.4cqw 0 auto; justify-content: center; }
+.stage .title .paint { height: calc(8cqw * 212 / 112); }   /* same letter size as the other titles */
+/* the tile layer lets the cursor through, so the lightbulb in the title still lights up */
+.pieces { position: absolute; inset: 0; pointer-events: none; }
+.piece { pointer-events: auto; }
+.piece {
+  position: absolute; left: calc(var(--x) * 1cqw); top: calc(var(--y) * 1cqw); width: calc(var(--w) * 1cqw);
+  translate: calc(var(--px, 0) * var(--d) * 1px) calc(var(--py, 0) * var(--d) * 1px);
+  transition: translate 1.2s cubic-bezier(.2, .8, .2, 1);
+}
+.piece:hover { z-index: 2; }
+.it { display: block; }
+.tile {
+  display: grid; place-items: center; aspect-ratio: var(--a);
+  background: var(--mark); color: var(--mark-ink);
+  rotate: var(--r); transition: rotate .5s cubic-bezier(.2, .8, .2, 1), scale .5s cubic-bezier(.2, .8, .2, 1);
+}
+.it:hover .tile, .it:focus-visible .tile { rotate: 0deg; scale: 1.05; }
+.cap { display: flex; gap: var(--s2); margin-top: var(--s2); text-underline-offset: .25em; }
+.cap b { font-weight: 400; color: var(--muted); }
+
+.k1 { --x: 5;  --y: 3;  --w: 13; --a: 4 / 5;   --r: -1.5deg; --d: 1.6; }
+.k2 { --x: 37; --y: 1;  --w: 18; --a: 16 / 10; --r: 1deg;    --d: .8; }
+.k3 { --x: 82; --y: 8;  --w: 14; --a: 3 / 4;   --r: 1.4deg;  --d: 1.2; }
+.k4 { --x: 4;  --y: 29; --w: 16; --a: 3 / 2;   --r: -1deg;   --d: 1; }
+.k5 { --x: 44; --y: 42; --w: 20; --a: 16 / 9;  --r: -.8deg;  --d: .7; }
+
+/* a tile holding a photo: the picture fills it, cropped to keep the shoreline */
+.tile { overflow: hidden; }
+.tile img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; display: block; }
+
+/* about */
+.about { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: var(--block); }
+.talk { grid-column: 1 / 3; padding: 0 var(--g); }
+.transcript { font-size: clamp(var(--t-m), 1.5vw, 24px); line-height: 1.55; }
+.transcript p { display: grid; grid-template-columns: 2.4em 3.4em 1fr; }
+.transcript b { font-weight: 400; color: var(--muted); }
+.transcript u { text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.js .transcript p { opacity: 0; transform: translateY(6px); transition: opacity .4s, transform .4s; }
+.js .transcript.is-in p { opacity: 1; transform: none; }
+.transcript p:nth-child(2) { transition-delay: 0.35s; }
+.transcript p:nth-child(3) { transition-delay: 0.7s; }
+.transcript p:nth-child(4) { transition-delay: 1.1s; }
+.transcript p:nth-child(5) { transition-delay: 1.4s; }
+.transcript p:nth-child(6) { transition-delay: 1.6s; }
+.transcript p:nth-child(7) { transition-delay: 1.9s; }
+.transcript p:nth-child(8) { transition-delay: 2.3s; }
+.transcript p:nth-child(9) { transition-delay: 2.9s; }
+.transcript p:nth-child(10) { transition-delay: 3.3s; }
+.transcript p:nth-child(11) { transition-delay: 3.7s; }
+.transcript p:nth-child(12) { transition-delay: 4.2s; }
+.transcript p:nth-child(13) { transition-delay: 4.6s; }
+
+.aboutside { grid-column: 3 / -1; padding: 0 var(--g); }
+.aboutside > p { font-size: var(--t-l); max-width: 36em; font-variation-settings: "MONO" 0; }
+/* subheadings in about me: a display size, so they stand out from the text */
+.aboutside .label {
+  margin: var(--s5) 0 var(--s3);
+  font-size: var(--t-xl); line-height: 1.2; font-weight: 500;
+  font-variation-settings: var(--semi);
+}
+.aboutside .label .ph { vertical-align: middle; }
+
+.end { padding: 0 var(--g) var(--s3); color: var(--muted); font-size: var(--t-s); }
+
+/* when the menu no longer fits on one line, it moves under the name */
+@media (max-width: 900px) {
+  :root { --top: 72px; }
+  .top { display: block; padding-top: var(--s2); }
+  .top .mark { height: 28px; }
+  .top .menu { flex-wrap: wrap; row-gap: var(--s1); padding-top: var(--s2); }
+  .top .cv { position: absolute; top: var(--s2); right: var(--g); }
+}
+
+/* phone: two columns */
+@media (max-width: 760px) {
+  :root { --top: 96px; }
+  .hero { background-size: 50% 100%; }
+
+  .hero { justify-content: flex-start; }
+  .statement { text-indent: 0; font-size: 8.6vw; }
+
+  .about { grid-template-columns: 1fr; row-gap: var(--block); }
+  .talk, .aboutside { grid-column: 1; }
+  .transcript p { grid-template-columns: 2em 3em 1fr; }
+
+  /* the projects stack around the title: two above, four below */
+  .stage { aspect-ratio: 100 / 170; }
+  .stage .title { top: 60cqw; }
+  .stage .title .paint { height: calc(12.5cqw * 212 / 112); }
+  .k1 { --x: 6;  --y: 2;   --w: 32; }
+  .k2 { --x: 56; --y: 10;  --w: 38; }
+  .k4 { --x: 4;  --y: 92;  --w: 36; }
+  .k3 { --x: 58; --y: 96;  --w: 32; }
+  .k5 { --x: 6;  --y: 132; --w: 46; }
+
+}
+
+/* the smallest phones: the menu may need a third line, so the header makes room for it */
+@media (max-width: 360px) {
+  :root { --top: 120px; }
+  .transcript { font-size: var(--t-s); }   /* keeps every transcript line on one line */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circled path { animation: none; stroke-dashoffset: 0; }
+  .js .transcript p { opacity: 1; transform: none; transition: none; }
+  .piece, .tile { transition: none; }
+}
+
+@media print {
+  .wave, .top { display: none; }
+}

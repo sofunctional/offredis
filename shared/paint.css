@@ -1,0 +1,69 @@
+/* section headings: the word on the left, the category's drawing on the right.
+   Both are static; only the drawings react, each in its own way, when the cursor is on them. */
+.title {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+  padding: 0 var(--g);
+  color: var(--title);
+}
+.title .hand { --hand: var(--title); width: var(--t-title); height: var(--t-title); stroke-width: 3.2; flex: none; margin-right: auto; }
+
+/* painted words: Sono itself, slightly heavier, with the brush filter over it */
+.title .paint { height: 8vw; width: auto; max-width: 100%; min-width: 0; flex: 0 1 auto; overflow: visible; }
+.paint text {
+  fill: currentColor; font-size: 100px; font-weight: 600;
+  font-variation-settings: var(--semi); letter-spacing: -2px;
+  font-variant-ligatures: none;
+}
+.paint mask { mask-type: alpha; }
+.swipe { fill: none; stroke: currentColor; stroke-width: 220; }
+
+/* line drawings */
+.title .doodle { width: 8vw; min-width: 48px; flex: none; overflow: visible; }
+.doodle path {
+  fill: none; stroke: currentColor; stroke-width: 3.2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.doodle g * { transform-box: view-box; }
+.ease { transition: transform .45s cubic-bezier(.3, 1.3, .5, 1), opacity .3s, fill .3s; }
+
+/* experience: the briefcase opens */
+.case .lid { transform-origin: 12px 58px; }
+.case .papers { opacity: 0; }
+/* the lid lifts and tilts back, staying clear of the papers */
+.case:hover .lid { transform: translateY(-17px) rotate(-6deg); }
+.case:hover .papers { opacity: 1; }
+
+/* academic work: a page lifts, curls and turns over the spine (driven by shared/doodles.js) */
+.book .page { transform-origin: 60px 60px; }
+.book .sheet { fill: var(--bg); }
+
+/* personal projects: the lightbulb lights up */
+.bulb .glass { transition: fill .25s; }
+.bulb:hover .glass { fill: var(--accent); }
+.bulb .rays { opacity: 0; transform-origin: 60px 46px; transform: scale(.7); }
+.bulb:hover .rays { opacity: 1; transform: none; }
+
+/* about me: in one fluid motion the moka pot rises off its base and tips towards the cup,
+   pouring; steam rises from the cup. The lift leads and the tilt follows within the same movement,
+   and moving away glides it back down. */
+.title .doodle.moka { width: calc(8vw * 4 / 3); min-width: 64px; }
+.moka .pot {
+  transform-origin: 40px 60px; translate: 0 0; rotate: 0deg;
+  transition: translate .9s cubic-bezier(.2, .7, .3, 1), rotate .9s cubic-bezier(.6, 0, .35, 1);
+}
+.moka:hover .pot { translate: 26px -22px; rotate: 40deg; }
+.moka .stream { stroke-dasharray: 1 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset .15s, opacity .15s; }
+.moka:hover .stream { stroke-dashoffset: 0; opacity: 1; transition: stroke-dashoffset .4s .78s cubic-bezier(.4, 0, .6, 1), opacity 0s .78s; }
+.moka .steam { opacity: 0; transition: opacity .15s; transform-origin: 119px 60px; }
+.moka:hover .steam { opacity: 1; transition: opacity .5s 1.15s; animation: steam 1.6s 1.15s ease-in-out infinite alternate; }
+@keyframes steam { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+
+@media (max-width: 760px) {
+  .title .paint { height: 12.5vw; }
+  .title .doodle { width: 12vw; min-width: 0; }
+  .title .doodle.moka { width: 16vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ease, .bulb .glass { transition: none; }
+  .moka *, .moka:hover * { transition: none !important; animation: none !important; }
+}

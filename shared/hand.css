@@ -1,0 +1,10 @@
+/* the waving hand next to "ciao": drawn in the same thin, rough line as the other drawings.
+   The motion lines are always there; the hand itself waves from the wrist while the cursor is on it
+   (or on the word beside it) and finishes its swing smoothly when the cursor leaves (shared/doodles.js). */
+.hand {
+  display: inline-block; width: 1em; height: 1em; vertical-align: -.14em;
+  fill: none; stroke: var(--hand, var(--accent)); stroke-width: 3.4;
+  stroke-linecap: round; stroke-linejoin: round;
+  overflow: visible;
+}
+.hand .palm { transform-box: view-box; transform-origin: 43px 92px; }   /* centre of the wrist */

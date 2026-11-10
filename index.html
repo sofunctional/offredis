@@ -42,7 +42,7 @@
       <a href="#experience">experience</a>
       <a href="#academic">academic stuff</a>
       <a href="#about">about me</a>
-      <a href="#projects" hidden>personal projects</a><!-- personal projects: remove "hidden" here and on the section to publish it -->
+      <a href="#projects">personal projects</a>
       <a href="#contact">contact</a>
       <a class="cv" data-arrow="drop" href="assets/sofia-offredi-cv.pdf" target="_blank" rel="noopener">cv (pdf) <span class="arrow" aria-hidden="true">↓</span></a>
     </nav>
@@ -206,17 +206,16 @@
       </div>
     </section>
 
-    <!-- personal projects is ready but switched off until it is complete: remove "hidden" here and on the menu link -->
-    <section id="projects" hidden>
+    <section id="projects">
       <!-- the projects sit around the title like objects on a table; each one is a project -->
       <div class="stage">
       <h2 class="title" aria-label="personal projects"><svg class="paint" viewBox="0 16 480 212" aria-hidden="true"><mask id="swipe-projects"><path class="swipe" pathLength="1" style="--i:0" d="M-20 122H500"/></mask><g mask="url(#swipe-projects)"><g filter="url(#brush)"><text x="240" y="98" text-anchor="middle" dy="0.1 2.7 -1.2 -0.6 -3.8 4.3 -1.5 2.1" rotate="1.5 -1.0 1.0 -1.9 -0.6 -1.2 -0.9 2.1">personal</text><text x="240" y="198" text-anchor="middle" dy="-2.0 4.9 -1.1 1.5 -2.5 0.6 -3.3 2.3" rotate="1.5 -1.7 0.3 -1.4 1.8 -0.9 2.1 2.4">projects</text></g></g></svg><svg class="doodle bulb" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><path class="glass" d="M60 12C40 12 28 28 30 46 32 58 40 64 44 72 46 76 46 80 46 84 56 85 64 85 74 84 74 80 74 76 76 72 80 64 88 58 90 46 92 28 80 12 60 12Z"/><path d="M48 91C56 92 64 92 72 91"/><path d="M52 97C57 98 63 98 68 97"/><path d="M51 62C54 54 57 68 60 58 63 48 66 64 69 56"/><path d="M60 84C60 76 60 70 60 64"/><g class="rays ease"><path d="M14 22C18 25 21 28 24 31"/><path d="M106 22C102 25 99 28 96 31"/><path d="M6 50C10 50 14 50 18 50"/><path d="M114 50C110 50 106 50 102 50"/><path d="M30 4C32 7 34 9 36 11"/><path d="M90 4C88 7 86 9 84 11"/><path d="M60 0C60 1 60 2 60 4"/></g></g></svg></h2>
         <ul class="pieces">
-          <li class="piece k1"><div class="it"><span class="tile"><img src="assets/photos/photo-01-web.jpg" alt="A lake in summer: reeds in the foreground, a wooded shore with houses and sailboats across the water, under a clear sky." width="806" height="1200" loading="lazy"></span><span class="cap"><b>01</b>photography</span></div></li>
-          <li class="piece k2"><div class="it"><span class="tile"></span><span class="cap"><b>02</b><em class="ph">[project]</em></span></div></li>
-          <li class="piece k3"><div class="it"><span class="tile"></span><span class="cap"><b>03</b><em class="ph">[project]</em></span></div></li>
-          <li class="piece k4"><div class="it"><span class="tile"></span><span class="cap"><b>04</b><em class="ph">[project]</em></span></div></li>
-          <li class="piece k5"><div class="it"><span class="tile"></span><span class="cap"><b>05</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k1"><button class="it" type="button" data-open="gallery" aria-haspopup="dialog"><span class="deck" aria-hidden="true"><img src="assets/photos/web/deck-1.jpg" alt=""><img src="assets/photos/web/deck-2.jpg" alt=""><img src="assets/photos/web/deck-3.jpg" alt=""><img src="assets/photos/web/deck-4.jpg" alt=""></span><span class="tile"><img src="assets/photos/web/07.jpg" alt="A lake in summer: reeds in the foreground, a wooded shore with houses and sailboats across the water, under a clear sky." width="806" height="1200" loading="lazy"></span><span class="cap"><b>01</b>photography</span></button></li>
+          <li class="piece k2"><div class="it"><span class="tile"><span class="wip"><svg class="doodle barrier" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><g class="stripes"><path d="M18 52C25 45 33 37 40 30"/><path d="M40 52C47 45 55 37 62 30"/><path d="M62 52C69 45 77 37 84 30"/><path d="M84 52C91 45 99 37 106 30"/></g><path d="M14 31C40 30 80 30 106 31 107 38 107 45 106 52 80 53 40 53 14 52 13 45 13 38 14 31Z"/><path d="M24 53C21 66 17 80 14 94"/><path d="M26 53C29 66 32 80 35 94"/><path d="M94 53C91 66 88 80 85 94"/><path d="M96 53C99 66 103 80 106 94"/><path d="M8 95C40 96 80 96 112 95"/><path class="lamp" d="M52 30C52 22 56 18 60 18 64 18 68 22 68 30"/><path d="M60 18C60 16 60 15 60 13"/><g class="glow"><path d="M46 14C48 16 49 17 50 19"/><path d="M74 14C72 16 71 17 70 19"/><path d="M60 3C60 5 60 6 60 8"/></g></g></svg><span class="wip-text">under construction</span></span></span><span class="cap"><b>02</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k3"><div class="it"><span class="tile"><span class="wip"><svg class="doodle barrier" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><g class="stripes"><path d="M18 52C25 45 33 37 40 30"/><path d="M40 52C47 45 55 37 62 30"/><path d="M62 52C69 45 77 37 84 30"/><path d="M84 52C91 45 99 37 106 30"/></g><path d="M14 31C40 30 80 30 106 31 107 38 107 45 106 52 80 53 40 53 14 52 13 45 13 38 14 31Z"/><path d="M24 53C21 66 17 80 14 94"/><path d="M26 53C29 66 32 80 35 94"/><path d="M94 53C91 66 88 80 85 94"/><path d="M96 53C99 66 103 80 106 94"/><path d="M8 95C40 96 80 96 112 95"/><path class="lamp" d="M52 30C52 22 56 18 60 18 64 18 68 22 68 30"/><path d="M60 18C60 16 60 15 60 13"/><g class="glow"><path d="M46 14C48 16 49 17 50 19"/><path d="M74 14C72 16 71 17 70 19"/><path d="M60 3C60 5 60 6 60 8"/></g></g></svg><span class="wip-text">under construction</span></span></span><span class="cap"><b>03</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k4"><div class="it"><span class="tile"><span class="wip"><svg class="doodle barrier" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><g class="stripes"><path d="M18 52C25 45 33 37 40 30"/><path d="M40 52C47 45 55 37 62 30"/><path d="M62 52C69 45 77 37 84 30"/><path d="M84 52C91 45 99 37 106 30"/></g><path d="M14 31C40 30 80 30 106 31 107 38 107 45 106 52 80 53 40 53 14 52 13 45 13 38 14 31Z"/><path d="M24 53C21 66 17 80 14 94"/><path d="M26 53C29 66 32 80 35 94"/><path d="M94 53C91 66 88 80 85 94"/><path d="M96 53C99 66 103 80 106 94"/><path d="M8 95C40 96 80 96 112 95"/><path class="lamp" d="M52 30C52 22 56 18 60 18 64 18 68 22 68 30"/><path d="M60 18C60 16 60 15 60 13"/><g class="glow"><path d="M46 14C48 16 49 17 50 19"/><path d="M74 14C72 16 71 17 70 19"/><path d="M60 3C60 5 60 6 60 8"/></g></g></svg><span class="wip-text">under construction</span></span></span><span class="cap"><b>04</b><em class="ph">[project]</em></span></div></li>
+          <li class="piece k5"><div class="it"><span class="tile"><span class="wip"><svg class="doodle barrier" viewBox="0 0 120 100" aria-hidden="true"><g filter="url(#rough)"><g class="stripes"><path d="M18 52C25 45 33 37 40 30"/><path d="M40 52C47 45 55 37 62 30"/><path d="M62 52C69 45 77 37 84 30"/><path d="M84 52C91 45 99 37 106 30"/></g><path d="M14 31C40 30 80 30 106 31 107 38 107 45 106 52 80 53 40 53 14 52 13 45 13 38 14 31Z"/><path d="M24 53C21 66 17 80 14 94"/><path d="M26 53C29 66 32 80 35 94"/><path d="M94 53C91 66 88 80 85 94"/><path d="M96 53C99 66 103 80 106 94"/><path d="M8 95C40 96 80 96 112 95"/><path class="lamp" d="M52 30C52 22 56 18 60 18 64 18 68 22 68 30"/><path d="M60 18C60 16 60 15 60 13"/><g class="glow"><path d="M46 14C48 16 49 17 50 19"/><path d="M74 14C72 16 71 17 70 19"/><path d="M60 3C60 5 60 6 60 8"/></g></g></svg><span class="wip-text">under construction</span></span></span><span class="cap"><b>05</b><em class="ph">[project]</em></span></div></li>
         </ul>
       </div>
     </section>
@@ -235,6 +234,43 @@
   <footer class="end">
     <span>© 2026 sofia offredi</span>
   </footer>
+
+  <!-- photography: opens from the "01 photography" tile. Photos run in order of colour:
+       black and white, pale greys and blues, greens, warm oranges, golden interiors, sunsets, night. -->
+  <dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <header class="gallery-top">
+      <h2 id="gallery-title">photography</h2>
+      <span class="meta">here are some analog pictures i have taken and (some of them) developed myself!</span>
+      <button class="close" type="button">close ×</button>
+    </header>
+    <div class="shots">
+      <figure style="--ar: 1.490"><img src="assets/photos/web/01.jpg" width="1000" height="671" loading="lazy" decoding="async" alt="Black and white: the sea seen from above, past an old brick wall."></figure>
+      <figure style="--ar: 1.490"><img src="assets/photos/web/02.jpg" width="1000" height="671" loading="lazy" decoding="async" alt="Black and white: a garden with trees and a hedge."></figure>
+      <figure style="--ar: 0.671"><img src="assets/photos/web/03.jpg" width="671" height="1000" loading="lazy" decoding="async" alt="Black and white: a bare, broken tree trunk against the sky."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/04.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A person with a checked umbrella on a grey beach."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/05.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="A person with a checked umbrella on the sand, leaning into the wind."></figure>
+      <figure style="--ar: 0.671"><img src="assets/photos/web/06.jpg" width="671" height="1000" loading="lazy" decoding="async" alt="A pale lake at dusk under a white sky."></figure>
+      <figure style="--ar: 0.671"><img src="assets/photos/web/07.jpg" width="671" height="1000" loading="lazy" decoding="async" alt="A lake in summer: reeds in the foreground, a wooded shore with houses and sailboats across the water."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/08.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="A hazy city skyline with a TV tower, behind a green hedge."></figure>
+      <figure style="--ar: 1.490"><img src="assets/photos/web/09.jpg" width="1000" height="671" loading="lazy" decoding="async" alt="A park with tall trees and people resting on the grass."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/10.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A bright green train window."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/11.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="Someone sitting in front of a pale stone building with a potted tree."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/12.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="Two people walking down a city street."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/13.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="People crossing a street in front of an orange building."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/14.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A house with an orange roof above the sea."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/15.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="An old ochre wall with a blue medallion, and someone painting at an easel."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/16.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="A small kitchen under a loft bed."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/17.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A small white dog."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/18.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A living room with red cushions."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/19.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="A family at dinner under a hanging lamp."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/20.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="Someone working at a desk in warm evening light."></figure>
+      <figure style="--ar: 0.666"><img src="assets/photos/web/21.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="A church interior lit gold, with stained-glass windows."></figure>
+      <figure style="--ar: 1.490"><img src="assets/photos/web/22.jpg" width="1000" height="671" loading="lazy" decoding="async" alt="A purple and orange sunset over a lake."></figure>
+      <figure style="--ar: 1.490"><img src="assets/photos/web/23.jpg" width="1000" height="671" loading="lazy" decoding="async" alt="Dusk over a lake, people in silhouette in the foreground."></figure>
+      <figure style="--ar: 0.671"><img src="assets/photos/web/24.jpg" width="671" height="1000" loading="lazy" decoding="async" alt="A bright window in a dark room."></figure>
+      <figure style="--ar: 1.502"><img src="assets/photos/web/25.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A dark room with tall windows looking out over a city."></figure>
+    </div>
+  </dialog>
 
   <script src="shared/scatter.js"></script>
   <script src="script.js"></script>

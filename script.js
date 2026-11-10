@@ -91,3 +91,11 @@ if (stage && !calm && matchMedia('(hover: hover)').matches) {
     stage.style.setProperty('--py', 0);
   });
 }
+
+/* ---------- photography: the tile opens the gallery; "close" or Esc shuts it ---------- */
+document.querySelectorAll('[data-open]').forEach(btn => {
+  const dialog = document.getElementById(btn.dataset.open);
+  if (!dialog) return;
+  btn.addEventListener('click', () => { dialog.showModal(); dialog.scrollTop = 0; });
+  dialog.querySelector('.close')?.addEventListener('click', () => dialog.close());
+});

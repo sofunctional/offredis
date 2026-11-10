@@ -99,3 +99,15 @@ document.querySelectorAll('[data-open]').forEach(btn => {
   btn.addEventListener('click', () => { dialog.showModal(); dialog.scrollTop = 0; });
   dialog.querySelector('.close')?.addEventListener('click', () => dialog.close());
 });
+
+/* ---------- on narrow screens the header grows to fit the menu; the page starts right below it ---------- */
+const header = document.querySelector('.top');
+function fitHeader() {
+  const root = document.documentElement, was = root.style.getPropertyValue('--top');
+  if (innerWidth <= 900) root.style.setProperty('--top', header.offsetHeight + 'px');
+  else root.style.removeProperty('--top');
+  if (root.style.getPropertyValue('--top') !== was) dispatchEvent(new Event('resize'));
+}
+fitHeader();   // before the first paint, so the page never jumps
+new ResizeObserver(fitHeader).observe(header);
+addEventListener('resize', fitHeader);

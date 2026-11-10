@@ -32,6 +32,7 @@ section[id] { padding: var(--section) 0; }
 main { position: relative; z-index: 1; }
 .hero {
   position: relative; min-height: 100svh;
+  overflow-anchor: none;   /* when the header settles its height, the page must not scroll by itself */
   padding: calc(var(--top) + var(--s3)) var(--g) var(--s5);
   display: flex; flex-direction: column; justify-content: space-between; gap: var(--s5);
 }
@@ -207,11 +208,16 @@ html:has(.gallery[open]) { overflow: hidden; }
 
 /* when the menu no longer fits on one line, it moves under the name */
 @media (max-width: 900px) {
-  :root { --top: 72px; }
-  .top { display: block; padding-top: var(--s2); }
-  .top .mark { height: 28px; }
-  .top .menu { flex-wrap: wrap; row-gap: var(--s1); padding-top: var(--s2); }
-  .top .cv { position: absolute; top: var(--s2); right: var(--g); }
+  :root { --top: 72px; }   /* a first guess: script.js sets the real height, however many lines the menu takes */
+  .top {
+    height: auto; flex-wrap: wrap; justify-content: flex-start;
+    column-gap: var(--menu-gap); row-gap: var(--s1); padding: var(--s2) var(--g);
+  }
+  /* name and cv share the first line; the section links flow onto the lines below */
+  .top .menu { display: contents; }
+  .top .cv { order: 1; margin-left: auto; }
+  .top::after { content: ""; order: 2; flex-basis: 100%; }
+  .top .menu a:not(.cv) { order: 3; }
 }
 
 /* phone: two columns */

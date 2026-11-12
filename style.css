@@ -98,7 +98,7 @@ main { position: relative; z-index: 1; }
 .cap b { font-weight: 400; color: var(--muted); }
 
 .k1 { --x: 5;  --y: 3;  --w: 13; --a: 4 / 5;   --r: -1.5deg; --d: 1.6; }
-.k2 { --x: 37; --y: 1;  --w: 18; --a: 16 / 10; --r: 1deg;    --d: .8; }
+.k2 { --x: 35; --y: 1;  --w: 21; --a: 16 / 10; --r: 1deg;    --d: .8; }
 .k3 { --x: 82; --y: 8;  --w: 14; --a: 3 / 4;   --r: 1.4deg;  --d: 1.2; }
 .k4 { --x: 4;  --y: 29; --w: 16; --a: 3 / 2;   --r: -1deg;   --d: 1; }
 .k5 { --x: 44; --y: 42; --w: 20; --a: 16 / 9;  --r: -.8deg;  --d: .7; }
@@ -126,7 +126,7 @@ button.it:hover .cap, button.it:focus-visible .cap { text-decoration: underline;
 /* the photography tile is a deck of prints: on hover the first four photos fan out
    from behind the cover, each from the bottom centre like cards held in a hand */
 button.it { position: relative; }
-.k1 .tile { position: relative; z-index: 1; }
+.deck + .tile { position: relative; z-index: 1; }   /* the cover always sits on top of its deck */
 .deck { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: var(--a); pointer-events: none; }
 .deck img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
@@ -139,7 +139,30 @@ button.it { position: relative; }
   .it:hover .deck img:nth-child(2) { rotate: -6deg;  translate: -5% -20%;  transition-delay: .04s; }
   .it:hover .deck img:nth-child(3) { rotate: 5deg;   translate: 5% -20%;   transition-delay: .08s; }
   .it:hover .deck img:nth-child(4) { rotate: 14deg;  translate: 14% -10%;  transition-delay: .12s; }
+  /* Booked has two screenshots: one fans to each side */
+  .k2 .it:hover .deck img:nth-child(1) { rotate: -9deg; translate: -18% -16%; }
+  .k2 .it:hover .deck img:nth-child(2) { rotate: 8deg;  translate: 18% -16%; transition-delay: .06s; }
 }
+
+/* Booked: the video's green title card fills the tile; a hand-drawn play button sits on top and fills in on hover */
+.k2 .tile { position: relative; }
+.tile .play { position: absolute; width: 13%; right: 5%; bottom: 7%; overflow: visible; color: var(--c-mint); }   /* in the corner, clear of the title */
+.play path { transition: fill .3s; }
+.play path + path { fill: none; }
+.it:hover .play path + path, .it:focus-visible .play path + path { fill: var(--c-mint); }
+
+/* the video window: same frame as the gallery, the film first, the story beside it */
+.film-body {
+  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: var(--s5);
+  align-items: start; padding: var(--s4) var(--g) var(--s5);
+}
+.screens { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin-top: var(--s3); }
+.screens img { display: block; width: 100%; height: auto; }
+.screens figcaption { margin-top: var(--s2); color: var(--c-mint); }
+.film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--c-forest); }
+.story h3 { margin-bottom: var(--s3); font-size: var(--t-xl); line-height: 1.2; font-weight: 500; font-variation-settings: var(--semi); }
+.story p { font-size: var(--t-l); line-height: 1.45; font-variation-settings: "MONO" 0; }
+.film .ph { background: var(--c-grey); color: var(--c-mint); }
 
 /* photography gallery: full screen, forest green so the photos carry the colour.
    Each row is justified: a photo's share of the row follows its shape (--ar = width / height). */
@@ -234,6 +257,8 @@ html:has(.gallery[open]) { overflow: hidden; }
 
   .gallery-top { flex-wrap: wrap; row-gap: 0; }
   .gallery-top .meta { order: 3; width: 100%; }
+  .film-body { grid-template-columns: 1fr; gap: var(--s4); }
+  .screens { grid-template-columns: 1fr; }
   .shots figure { flex-basis: calc(var(--ar) * 110px); }
 
   /* the projects stack around the title: two above, four below */
@@ -241,7 +266,7 @@ html:has(.gallery[open]) { overflow: hidden; }
   .stage .title { top: 60cqw; }
   .stage .title .paint { height: calc(12.5cqw * 212 / 112); }
   .k1 { --x: 6;  --y: 2;   --w: 32; }
-  .k2 { --x: 56; --y: 10;  --w: 38; }
+  .k2 { --x: 53; --y: 10;  --w: 42; }
   .k4 { --x: 4;  --y: 92;  --w: 36; }
   .k3 { --x: 58; --y: 96;  --w: 32; }
   .k5 { --x: 6;  --y: 132; --w: 46; }

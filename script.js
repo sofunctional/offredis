@@ -98,6 +98,8 @@ document.querySelectorAll('[data-open]').forEach(btn => {
   if (!dialog) return;
   btn.addEventListener('click', () => { dialog.showModal(); dialog.scrollTop = 0; });
   dialog.querySelector('.close')?.addEventListener('click', () => dialog.close());
+  // closing the window stops the film
+  dialog.addEventListener('close', () => dialog.querySelectorAll('video').forEach(v => v.pause()));
 });
 
 /* ---------- on narrow screens the header grows to fit the menu; the page starts right below it ---------- */

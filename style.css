@@ -162,6 +162,7 @@ button.it { position: relative; }
 .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--c-forest); }
 .story h3 { margin-bottom: var(--s3); font-size: var(--t-xl); line-height: 1.2; font-weight: 500; font-variation-settings: var(--semi); }
 .story p { font-size: var(--t-l); line-height: 1.45; font-variation-settings: "MONO" 0; }
+.story p + p { margin-top: var(--s3); }
 .film .ph { background: var(--c-grey); color: var(--c-mint); }
 
 /* photography gallery: full screen, forest green so the photos carry the colour.

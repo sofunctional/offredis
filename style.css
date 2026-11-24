@@ -153,16 +153,29 @@ button.it { position: relative; }
 
 /* the video window: same frame as the gallery, the story first, then the film and the screenshots */
 /* both windows follow the page: --block above, below and between blocks, --g between images and at the sides */
-.film-body { display: grid; gap: var(--block); padding: var(--block) var(--g); }
-.screens { display: grid; grid-template-columns: 1fr 1fr; gap: var(--g); margin-top: var(--block); }
+.film-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--block); padding: var(--block) 0; }
+.film-body .story { padding: 0 var(--g); }   /* the film and the screenshots run edge to edge, the text keeps the margin */
+.screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--g); margin-top: var(--g); }
 .screens img { display: block; width: 100%; height: auto; }
 .zoom { display: block; cursor: zoom-in; }
 .zoom img { transition: opacity .3s; }
 .zoom:hover img, .zoom:focus-visible img { opacity: .8; }
-/* one screenshot over the whole page, never cropped */
-.viewer[open] { display: flex; flex-direction: column; }
-.viewer > img { flex: 1; min-height: 0; width: 100%; object-fit: contain; padding: var(--g); cursor: zoom-out; }
-.screens figcaption { margin-top: var(--s2); color: var(--c-mint); }
+/* one screenshot laid over the window, a little larger than it was (--w comes from script.js) */
+.viewer {
+  position: fixed; inset: 0; margin: auto; padding: 0; border: 0; overflow: visible;
+  width: min(var(--w, 900px), 100vw - 2 * var(--g), (100dvh - 2 * var(--s6)) * 1.6);
+  max-width: none; max-height: none; height: fit-content;
+  background: none; color: var(--c-mint);
+}
+.viewer::backdrop { background: color-mix(in srgb, var(--c-forest) 82%, transparent); }
+.viewer img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; outline: 2px solid var(--c-mint); }
+.viewer .close {
+  display: block; margin: 0 0 var(--s2) auto; padding: var(--s2) var(--s3); border: 0;
+  background: var(--c-pink); color: var(--c-forest); font: inherit; font-size: var(--t-xl); font-weight: 600; line-height: 1.2;
+  font-variation-settings: var(--semi); cursor: pointer;
+}
+.viewer .close:hover, .viewer .close:focus-visible { background: var(--c-mint); outline-color: var(--c-pink); }
+.screens figcaption { width: auto; margin-top: var(--s2); padding: 0 var(--g); color: var(--c-mint); }
 .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--c-forest); }
 .story h3 { margin-bottom: var(--s4); font-size: clamp(36px, 4vw, 60px); line-height: 1.1; font-weight: 500; font-variation-settings: var(--semi); }
 .story p { font-size: var(--t-l); line-height: 1.45; font-variation-settings: "MONO" 0; }
@@ -261,9 +274,9 @@ html:has(.gallery[open]) { overflow: hidden; }
   .talk, .aboutside { grid-column: 1; }
   .transcript p { grid-template-columns: 2em 3em 1fr; }
 
+  .viewer { --w: 100vw !important; }
   .gallery-top { flex-wrap: wrap; row-gap: 0; }
   .gallery-top .meta { order: 3; width: 100%; }
-  .screens { grid-template-columns: 1fr; row-gap: var(--block); }
   .shots figure { flex-basis: calc(var(--ar) * 105px); }
 
   /* the projects stack around the title: two above, four below */

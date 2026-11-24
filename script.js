@@ -102,6 +102,20 @@ document.querySelectorAll('[data-open]').forEach(btn => {
   dialog.addEventListener('close', () => dialog.querySelectorAll('video').forEach(v => v.pause()));
 });
 
+/* ---------- a.zoom opens its image at full page, over whichever window is open; click it, "close" or Esc returns ---------- */
+const viewer = document.getElementById('viewer');
+document.querySelectorAll('a.zoom').forEach(link => link.addEventListener('click', e => {
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;   // still opens in a new tab when asked to
+  e.preventDefault();
+  link.closest('dialog')?.querySelectorAll('video').forEach(v => v.pause());
+  const big = viewer.querySelector('img');
+  big.src = link.href;
+  big.alt = link.querySelector('img').alt;
+  viewer.querySelector('.meta').textContent = link.parentElement.querySelector('figcaption').textContent;
+  viewer.showModal();
+}));
+viewer.addEventListener('click', e => { if (e.target.closest('img, .close')) viewer.close(); });
+
 /* ---------- on narrow screens the header grows to fit the menu; the page starts right below it ---------- */
 const header = document.querySelector('.top');
 function fitHeader() {

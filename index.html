@@ -245,18 +245,19 @@
       <button class="close" type="button">close ×</button>
     </header>
     <div class="film-body">
-      <div class="film-main">
-        <video src="assets/video/booked.mp4" poster="assets/video/booked-poster.jpg" controls playsinline preload="none" width="1280" height="720"></video>
-        <div class="screens">
-          <figure><img src="assets/video/booked-exlibris.jpg" width="1600" height="1000" loading="lazy" alt="The Ex Libris Studio in Booked: four stamp styles and a round 'Sofia' ex libris with a tree growing from a pile of books."><figcaption class="meta">ex libris studio: design a stamp and press it into your books</figcaption></figure>
-          <figure><img src="assets/video/booked-reading.jpg" width="1600" height="1000" loading="lazy" alt="Booked's homepage: recent book covers, genres to explore, and a bookworm asking what you would like to read today."><figcaption class="meta">suggested reading: genres, recent books and a reading tip</figcaption></figure>
-        </div>
-      </div>
       <div class="story">
         <h3>the story</h3>
-        <p>Booked was born from a simple frustration: the classics are free, but finding and downloading them almost never is.</p>
-        <p>Thousands of public domain works live on Internet Archive, Project Gutenberg and Liber Liber, scattered across catalogues, intermediate pages and confusing formats. Booked searches them all at once and delivers the right file straight to your device.</p>
-        <p>When a book isn't free yet, we point you to the legal ways to read it, such as digital libraries and previews.</p>
+        <p>Did you know that the copyright on books expires 70 years after the death of the author? Interesting, right? So now think about how many books can be accessed for free (legally) online! And we are still buying them...???</p>
+        <p>The idea of Booked was born from my frustration of always having to buy classics during my Bachelor and it being a hassle to find them online. I thought it would be useful for students to be able to have one platform where the download is direct, without having to open several pages and create accounts. This is why I created this.</p>
+        <p>I tried to add my own twist by giving the option of stamping the books with a personalised ex-libris, something that I also love doing on my own physical books.</p>
+        <p>I know, the UI is not super cool or perfect but hey! it was my first project and I was proud of it! Check out my other projects to find out more about me and what I find frustrating!</p>
+      </div>
+      <div class="film-main">
+        <video src="assets/video/booked.mp4" poster="assets/video/booked-video-poster.jpg" controls playsinline preload="none" width="1280" height="720"></video>
+        <div class="screens">
+          <figure><a class="zoom" href="assets/video/booked-exlibris.jpg" aria-haspopup="dialog"><img src="assets/video/booked-exlibris.jpg" width="1600" height="1000" loading="lazy" alt="The Ex Libris Studio in Booked: four stamp styles and a round 'Sofia' ex libris with a tree growing from a pile of books."></a><figcaption class="meta">ex libris studio: design a stamp and press it into your books</figcaption></figure>
+          <figure><a class="zoom" href="assets/video/booked-reading.jpg" aria-haspopup="dialog"><img src="assets/video/booked-reading.jpg" width="1600" height="1000" loading="lazy" alt="Booked's homepage: recent book covers, genres to explore, and a bookworm asking what you would like to read today."></a><figcaption class="meta">suggested reading: genres, recent books and a reading tip</figcaption></figure>
+        </div>
       </div>
     </div>
   </dialog>
@@ -294,6 +295,15 @@
       <figure style="--ar: 0.671"><img src="assets/photos/web/24.jpg" width="671" height="1000" loading="lazy" decoding="async" alt="A bright window in a dark room."></figure>
       <figure style="--ar: 1.502"><img src="assets/photos/web/25.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="A dark room with tall windows looking out over a city."></figure>
     </div>
+  </dialog>
+
+  <!-- one image at full page: opened by any a.zoom, filled in by script.js -->
+  <dialog class="gallery viewer" id="viewer" aria-label="image at full page">
+    <header class="gallery-top">
+      <span class="meta"></span>
+      <button class="close" type="button">close ×</button>
+    </header>
+    <img alt="">
   </dialog>
 
   <script src="shared/scatter.js"></script>

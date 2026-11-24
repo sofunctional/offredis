@@ -112,8 +112,8 @@ button.it { width: 100%; padding: 0; border: 0; background: none; color: inherit
 button.it:hover .cap, button.it:focus-visible .cap { text-decoration: underline; }
 
 /* empty project tiles: a hand-drawn roadwork barrier; its lamp blinks under the cursor */
-.wip { display: flex; flex-direction: column; align-items: center; gap: var(--s1); width: 100%; padding: var(--s2); text-align: center; }
-.wip .barrier { width: min(46%, 120px); overflow: visible; }
+.wip { display: flex; flex-direction: column; align-items: center; gap: var(--s1); width: 100%; padding: var(--s1); text-align: center; }
+.wip .barrier { width: min(36%, 120px); overflow: visible; }
 .barrier .stripes path { stroke: var(--c-pink); stroke-width: 7; stroke-linecap: butt; }
 .barrier .lamp { transition: fill .2s; }
 .barrier .glow { opacity: 0; }
@@ -151,18 +151,23 @@ button.it { position: relative; }
 .play path + path { fill: none; }
 .it:hover .play path + path, .it:focus-visible .play path + path { fill: var(--c-mint); }
 
-/* the video window: same frame as the gallery, the film first, the story beside it */
-.film-body {
-  display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: var(--s5);
-  align-items: start; padding: var(--s4) var(--g) var(--s5);
-}
-.screens { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3); margin-top: var(--s3); }
+/* the video window: same frame as the gallery, the story first, then the film and the screenshots */
+/* both windows follow the page: --block above, below and between blocks, --g between images and at the sides */
+.film-body { display: grid; gap: var(--block); padding: var(--block) var(--g); }
+.screens { display: grid; grid-template-columns: 1fr 1fr; gap: var(--g); margin-top: var(--block); }
 .screens img { display: block; width: 100%; height: auto; }
+.zoom { display: block; cursor: zoom-in; }
+.zoom img { transition: opacity .3s; }
+.zoom:hover img, .zoom:focus-visible img { opacity: .8; }
+/* one screenshot over the whole page, never cropped */
+.viewer[open] { display: flex; flex-direction: column; }
+.viewer > img { flex: 1; min-height: 0; width: 100%; object-fit: contain; padding: var(--g); cursor: zoom-out; }
 .screens figcaption { margin-top: var(--s2); color: var(--c-mint); }
 .film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: var(--c-forest); }
-.story h3 { margin-bottom: var(--s3); font-size: var(--t-xl); line-height: 1.2; font-weight: 500; font-variation-settings: var(--semi); }
+.story h3 { margin-bottom: var(--s4); font-size: clamp(36px, 4vw, 60px); line-height: 1.1; font-weight: 500; font-variation-settings: var(--semi); }
 .story p { font-size: var(--t-l); line-height: 1.45; font-variation-settings: "MONO" 0; }
 .story p + p { margin-top: var(--s3); }
+.story { max-width: 60em; }
 .film .ph { background: var(--c-grey); color: var(--c-mint); }
 
 /* photography gallery: full screen, forest green so the photos carry the colour.
@@ -187,7 +192,7 @@ html:has(.gallery[open]) { overflow: hidden; }
   transition: background-color .15s;
 }
 .gallery .close:hover, .gallery .close:focus-visible { background: var(--c-pink); }
-.shots { display: flex; flex-wrap: wrap; gap: var(--s2); padding: var(--s3) var(--g) var(--s5); }
+.shots { display: flex; flex-wrap: wrap; gap: var(--g); padding: var(--block) var(--g); }
 .shots::after { content: ""; flex: 10 1 0; }   /* keeps the last row from stretching */
 .shots figure { flex: var(--ar) 1 calc(var(--ar) * 260px); }
 .shots img { display: block; width: 100%; height: auto; background: var(--c-grey); transition: opacity .3s; }
@@ -258,9 +263,8 @@ html:has(.gallery[open]) { overflow: hidden; }
 
   .gallery-top { flex-wrap: wrap; row-gap: 0; }
   .gallery-top .meta { order: 3; width: 100%; }
-  .film-body { grid-template-columns: 1fr; gap: var(--s4); }
-  .screens { grid-template-columns: 1fr; }
-  .shots figure { flex-basis: calc(var(--ar) * 110px); }
+  .screens { grid-template-columns: 1fr; row-gap: var(--block); }
+  .shots figure { flex-basis: calc(var(--ar) * 105px); }
 
   /* the projects stack around the title: two above, four below */
   .stage { aspect-ratio: 100 / 170; }

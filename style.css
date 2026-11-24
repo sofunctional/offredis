@@ -163,7 +163,7 @@ button.it { position: relative; }
 /* one screenshot laid over the window, a little larger than it was (--w comes from script.js) */
 .viewer {
   position: fixed; inset: 0; margin: auto; padding: 0; border: 0; overflow: visible;
-  width: min(var(--w, 900px), 100vw - 2 * var(--g), (100dvh - 2 * var(--s6)) * 1.6);
+  width: min(var(--w, 900px), 100vw - 2 * var(--g), (100dvh - var(--s6)) * 1.6);
   max-width: none; max-height: none; height: fit-content;
   background: none; color: var(--c-mint);
 }
